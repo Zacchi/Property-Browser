@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyBrowser(Web Form)", "PropertyBrowser(Web Form)\PropertyBrowser(Web Form).csproj", "{770A4797-73E5-407D-8380-F52E5BCDE8A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyBrowserGeocoder", "PropertyBrowserGeocoder\PropertyBrowserGeocoder.csproj", "{FF0AD8F1-983E-414B-B087-2EA03305AF96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyBrowserWS", "PropertyBrowserWS\PropertyBrowserWS.csproj", "{8FB3559F-5BBD-4CC0-AC72-582CE26FC0AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAzureProject", "MyAzureProject\MyAzureProject.csproj", "{CB3D6534-A0C8-4466-B031-742858825D23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{770A4797-73E5-407D-8380-F52E5BCDE8A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{770A4797-73E5-407D-8380-F52E5BCDE8A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{770A4797-73E5-407D-8380-F52E5BCDE8A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{770A4797-73E5-407D-8380-F52E5BCDE8A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF0AD8F1-983E-414B-B087-2EA03305AF96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF0AD8F1-983E-414B-B087-2EA03305AF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF0AD8F1-983E-414B-B087-2EA03305AF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF0AD8F1-983E-414B-B087-2EA03305AF96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB3559F-5BBD-4CC0-AC72-582CE26FC0AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB3559F-5BBD-4CC0-AC72-582CE26FC0AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB3559F-5BBD-4CC0-AC72-582CE26FC0AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB3559F-5BBD-4CC0-AC72-582CE26FC0AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB3D6534-A0C8-4466-B031-742858825D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB3D6534-A0C8-4466-B031-742858825D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB3D6534-A0C8-4466-B031-742858825D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB3D6534-A0C8-4466-B031-742858825D23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,93 @@
+<html>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<head>
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map-canvas {
+            height: 100%;
+        }
+    </style>
+    <!-- Google API Reference -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCahm8jN84LMOuAYbUEA6_Mquank8AQsR8"> //Google Api source reference
+    </script>
+    <script type="text/javascript">
+
+        var map;
+        var iconname = "iconTinyHome.png"; //red dots on map
+        var myLatlng; //center of map;
+        //var infoWindow;
+        var marker;
+        var infowindow;//open information window on each marker
+
+        function initialize() {
+            myLatlng = new google.maps.LatLng(52.922151, -11.524658); //Ireland's lat and long
+            var mapOptions = {
+                zoom: 6,
+                center: myLatlng,
+                streetViewControl: true,
+                panControl: true,
+                overviewMapControl: true,
+                mapTypeControl: true
+            };
+            map = new google.maps.Map(document.getElementById("map-canvas"),
+                mapOptions);
+
+            var listOfPropertiesTextFromWS = httpMyGet('http://localhost:50151/api/Property/GetAllProperties'); //http get from WS
+            var listOfPropertiesObjectsFromWS = JSON.parse(listOfPropertiesTextFromWS);
+
+            //calling infoWindow object
+            infowindow = new google.maps.InfoWindow({
+                maxWidth: 500,
+                maxHeight: 200
+            });
+
+            //creating each marker from listofProperties in my Web Service
+            for (var i = 0; i < listOfPropertiesObjectsFromWS.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(listOfPropertiesObjectsFromWS[i].Lat, listOfPropertiesObjectsFromWS[i].Lng),
+                    map: map,
+                    icon: iconname,
+                    title: listOfPropertiesObjectsFromWS[i].Address
+                });
+                //infoWindow set up
+                //http://stackoverflow.com/questions/11106671/google-maps-api-multiple-markers-with-infowindows
+                var content ='<IMG BORDER="0" ALIGN="Left" WIDTH="100" SRC="houseIcon.jpg">'+ 
+                    listOfPropertiesObjectsFromWS[i].Address +
+                    '<p>County: ' + listOfPropertiesObjectsFromWS[i].County +
+                    '<p> Price: ' + listOfPropertiesObjectsFromWS[i].Price;
+
+                google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+                    return function () {
+                        infowindow.setContent(content);
+                        infowindow.open(map, marker);
+                    };
+                })(marker, content, infowindow));
+            }//End of loop 
+        }//End of initialize
+
+        //Http GET function
+        function httpMyGet(theUrl) {
+            var xmlHttp = null;
+
+            xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", theUrl, false);
+            xmlHttp.send(null);
+            return xmlHttp.responseText;
+        }
+
+    </script>
+</head>
+<body onload="initialize()">
+    <div id="map-canvas" />
+
+</body>
+</html>
